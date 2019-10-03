@@ -14,6 +14,19 @@ module.exports = {
     return res.json(spots);
   },
 
+  async delete(req, res) {
+    const {
+      spot_id
+    } = req.params;
+
+  await Spot.deleteOne({
+      _id: spot_id
+    })
+
+    return res.json();
+  },
+
+
   async store(req, res) {
     const {
       filename
