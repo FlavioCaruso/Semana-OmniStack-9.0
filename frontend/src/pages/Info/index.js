@@ -48,8 +48,9 @@ export default function Info({match, history}) {
     </>
     <h2>Valor:</h2>
     <h3>{spot.price ? `R$${spot.price}/dia` : 'Gratuito'}</h3>
-     <Link to="/dashboard"><button id="btn-voltar">Voltar</button></ Link>
+      <Link to={`/edit/${spotId}`}><button id="btn-editar">Editar</button></Link>
       <button id="btn-excluir" onClick={deleteSpot}>Excluir</button>
+     <Link to="/dashboard"><button id="btn-voltar">Voltar</button></ Link>
     </>
   )
 }

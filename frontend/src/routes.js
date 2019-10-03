@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import New from './pages/New';
 import Info from './pages/Info';
+import Edit from './pages/Edit';
 
 export default function Routes(){
   return(
@@ -14,6 +15,7 @@ export default function Routes(){
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/new" component={New} />
         <Route path="/info/:id" component={Info} />
+        <Route path="/edit/:id" component={Edit} />
       </Switch>
     </BrowserRouter>
   ) 
