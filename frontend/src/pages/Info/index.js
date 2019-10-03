@@ -4,7 +4,7 @@ import api from '../../services/api';
 
 import './styles.css'
 
-export default function Info({match}) {
+export default function Info({match, history}) {
   const spotId = decodeURIComponent(match.params.id);
   // state = data do vuejs
   // setState = Altera o valor do state
@@ -18,6 +18,11 @@ export default function Info({match}) {
   //     // resto da funcao
   //   }
   // }
+  async function deleteSpot(event){
+    event.preventDefault();
+    await api.delete(`/spots/${spotId}`);
+    history.push ('/dashboard');
+  }
   useEffect(() => {
     async function loadSpot(){
       const response = await api.get('/spots', {
@@ -38,13 +43,13 @@ export default function Info({match}) {
      <h2>Usando as Técnologias:</h2>
      <>
         { techs.map(tech => (
-          <li>{tech}</li> 
+          <li key={tech}>{tech}</li> 
         ))}
     </>
     <h2>Valor:</h2>
     <h3>{spot.price ? `R$${spot.price}/dia` : 'Gratuito'}</h3>
      <Link to="/dashboard"><button id="btn-voltar">Voltar</button></ Link>
-      <button id="btn-excluir">Excluir</button>
+      <button id="btn-excluir" onClick={deleteSpot}>Excluir</button>
     </>
   )
 }
