@@ -4,8 +4,15 @@ const Spot = require('../models/Spot')
 module.exports = {
   async index(req, res) {
     const {
-      tech
+      tech, _id
     } = req.query;
+
+    if(_id){
+      const spot = await Spot.findById({
+        _id
+      })
+      return res.json(spot);
+    }
 
     const spots = await Spot.find({
       techs: tech
