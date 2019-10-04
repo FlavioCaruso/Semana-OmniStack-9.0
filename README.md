@@ -27,3 +27,12 @@ Na pasta `frontend` execute:
 ```bash
 $ yarn start
 ```
+
+## Imagens
+
+Tela de Informações com o Delete
+![Informacoes](https://raw.githubusercontent.com/FlavioCaruso/Semana-OmniStack-9.0/master/frontend/src/assets/img1.jpg)
+
+
+Tela de Edição
+![Informacoes](https://raw.githubusercontent.com/FlavioCaruso/Semana-OmniStack-9.0/master/frontend/src/assets/img2.jpg)
