@@ -9,6 +9,7 @@ const app = express();
 mongoose.connect('mongodb+srv://flavio:flavio@omnistack9-gfewe.mongodb.net/semana09?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useFindAndModify: true,
 })
 
 //GET, PUT, POST, DELETE

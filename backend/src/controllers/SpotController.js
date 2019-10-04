@@ -66,5 +66,24 @@ module.exports = {
     return res.json({
       spot
     })
+  },
+
+  async edit(req, res) {
+    const {
+      spotId
+    } = req.params;
+    
+    const {
+      company,
+      techs,
+      price,
+    } = req.body;
+
+    const spot = await Spot.findByIdAndUpdate(spotId, req.body,{
+      new: true,
+      upsert: true
+    })
+
+    return res.json(spot)
   }
 }
